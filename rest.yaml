@@ -205,7 +205,7 @@
     - name: grizzl-e.powerMeas
       value_template: "{{ value_json.powerMeas }}"
       device_class: power
-      unit_of_measurement: "kW"
+      unit_of_measurement: "W"
       state_class: measurement
     - name: grizzl-e.temperature1
       value_template: "{{ value_json.temperature1 }}"

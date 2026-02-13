@@ -26,12 +26,10 @@
     - name: grizzl_e_charge_limit
       unique_id: grizzl_e_charge_limit
       icon: mdi:ampersand
-      # Read the current setting and append ' A' to match our options
       state: >
         {% set current = states('sensor.grizzl_e_current_set') %}
         {{ current | int ~ ' A' if current | is_number else None }}
       options: "{{ ['6 A', '12 A', '16 A', '24 A', '32 A', '40 A', '48 A'] }}"
-      # When a new option is selected, strip the ' A' and call the rest_command
       select_option:
         - action: rest_command.grizzl_e_set_charge_rate
           data:

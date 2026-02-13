@@ -23,6 +23,7 @@ The integration is split into three modular YAML files:
 
 - A Grizzl-E Ultimate series charger connected to your local network.
 - Knowledge of your charger's IP address.
+- **Important:** Ensure the charger is **not** connected to any OCPP server. This includes the official Grizzl-E app/cloud service. The charger can only handle one management connection (Local or OCPP) effectively for control.
 
 ### 2. Configure Secrets
 

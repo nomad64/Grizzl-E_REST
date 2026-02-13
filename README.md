@@ -27,10 +27,12 @@ The integration is split into three modular YAML files:
 
 ### 2. Configure Secrets
 
-Add your charger's IP address to your Home Assistant `secrets.yaml` file:
+Add your charger's API endpoints to your Home Assistant `secrets.yaml` file. Since Home Assistant secrets must replace the entire value, you need to provide the full URLs:
 
 ```yaml
-grizzl_e_ip: 192.168.1.XXX # Replace with your charger's IP
+grizzl_e_main_resource: http://192.168.1.XXX/main
+grizzl_e_page_event_url: http://192.168.1.XXX/pageEvent
+grizzl_e_ocpp_event_url: http://192.168.1.XXX/ocppEvent
 ```
 
 ### 3. Include Configuration Files

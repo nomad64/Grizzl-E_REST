@@ -8,8 +8,8 @@ title: Grizzl-E Charger
 entities:
   - entity: switch.grizzl_e_charge
     name: Charging Enable
-  - entity: number.grizzl_e_charge_current
-    name: Set Charge Rate
+  - entity: select.grizzl_e_charge_limit
+    name: Set Charge Limit
   - entity: sensor.grizzl_e_state
     name: Status
   - entity: sensor.grizzl_e_total_energy

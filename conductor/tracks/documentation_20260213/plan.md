@@ -1,9 +1,9 @@
 # Implementation Plan: Documentation and Examples
 
 ## Phase 1: Configuration Enrichment
-- [ ] Task: Add comments and refine naming in `rest.yaml`.
-- [ ] Task: Add comments and refine naming in `rest_command.yaml`.
-- [ ] Task: Add comments and refine naming in `template.yaml`.
+- [x] Task: Add comments and refine naming in `rest.yaml`.
+- [x] Task: Add comments and refine naming in `rest_command.yaml`.
+- [x] Task: Add comments and refine naming in `template.yaml`. (e5016da)
 
 ## Phase 2: Documentation & Examples
 - [ ] Task: Rewrite `README.md` with comprehensive setup instructions and architecture overview.

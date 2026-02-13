@@ -48,4 +48,4 @@ grizzl_e_set_charge_rate:
   # authentication: basic
   # username: !secret grizzl_e_username
   # password: !secret grizzl_e_password
-  payload: "currentSet={{current}}"
+  payload: "currentSet={{ current | int }}"

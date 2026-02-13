@@ -5,10 +5,10 @@
 # This automation updates the charger's current limit whenever the input_number helper changes.
 - alias: "Grizzl-E: Sync Charge Current"
   description: "Update charger current limit when input_number changes"
-  trigger:
+  triggers:
     - platform: state
       entity_id: input_number.grizzl_e_charge_current
-  action:
+  actions:
     - action: rest_command.grizzl_e_set_charge_rate
       data:
         current: "{{ states('input_number.grizzl_e_charge_current') | int }}"
@@ -17,10 +17,10 @@
 # This automation sends a notification to your mobile device when the charging status changes.
 - alias: "Grizzl-E: Charging State Notification"
   description: "Notify when charging starts or stops"
-  trigger:
+  triggers:
     - platform: state
       entity_id: binary_sensor.grizzl_e_session_started
-  action:
+  actions:
     - action: notify.mobile_app_your_device # Replace with your actual notification service
       data:
         title: "Grizzl-E Charger"
@@ -32,20 +32,20 @@
 # This automation enables charging during off-peak hours (e.g., midnight to 6 AM).
 - alias: "Grizzl-E: Off-Peak Charging"
   description: "Enable charging during off-peak hours"
-  trigger:
+  triggers:
     - platform: time
       at: "00:00:00"
-  action:
+  actions:
     - action: switch.turn_on
       target:
         entity_id: switch.grizzl_e_charge
 
 - alias: "Grizzl-E: End Off-Peak Charging"
   description: "Disable charging when off-peak ends"
-  trigger:
+  triggers:
     - platform: time
       at: "06:00:00"
-  action:
+  actions:
     - action: switch.turn_off
       target:
         entity_id: switch.grizzl_e_charge

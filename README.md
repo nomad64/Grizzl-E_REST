@@ -72,10 +72,10 @@ To set the charging current from the UI, it is recommended to create an `input_n
 automation:
   - alias: "Grizzl-E Set Charge Current"
     description: "Update the charger's maximum current limit whenever the input_number helper is adjusted in the UI."
-    trigger:
+    triggers:
       - platform: state
         entity_id: input_number.grizzl_e_charge_current
-    action:
+    actions:
       - action: rest_command.grizzl_e_set_charge_rate
         data:
           current: "{{ states('input_number.grizzl_e_charge_current') | int }}"

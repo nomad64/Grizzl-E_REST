@@ -13,9 +13,9 @@ This project provides a comprehensive local integration for the Grizzl-E Ultimat
 
 The integration is split into three modular YAML files:
 
-1.  **`rest.yaml`**: Handles polling the charger's API for status updates and metrics.
-2.  **`rest_command.yaml`**: Defines the actions used to send commands to the charger.
-3.  **`template.yaml`**: Creates user-friendly switches and processes raw data from the REST sensors.
+1.  **`grizzl_e_rest.yaml`**: Handles polling the charger's API for status updates and metrics.
+2.  **`grizzl_e_rest_command.yaml`**: Defines the actions used to send commands to the charger.
+3.  **`grizzl_e_template.yaml`**: Creates user-friendly switches and processes raw data from the REST sensors.
 
 ## Setup Instructions
 
@@ -35,12 +35,12 @@ grizzl_e_ip: 192.168.1.XXX # Replace with your charger's IP
 
 ### 3. Include Configuration Files
 
-Copy `rest.yaml`, `rest_command.yaml`, and `template.yaml` to your Home Assistant configuration directory. Then, reference them in your `configuration.yaml`:
+Copy `grizzl_e_rest.yaml`, `grizzl_e_rest_command.yaml`, and `grizzl_e_template.yaml` to your Home Assistant configuration directory. Then, reference them in your `configuration.yaml`:
 
 ```yaml
-rest: !include rest.yaml
-rest_command: !include rest_command.yaml
-template: !include template.yaml
+rest: !include grizzl_e_rest.yaml
+rest_command: !include grizzl_e_rest_command.yaml
+template: !include grizzl_e_template.yaml
 ```
 
 *Note: If you already have these sections in your `configuration.yaml`, you may need to merge the contents instead of using `!include`.*

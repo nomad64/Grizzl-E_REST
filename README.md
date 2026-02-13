@@ -43,7 +43,11 @@ rest_command: !include grizzl_e_rest_command.yaml
 template: !include grizzl_e_template.yaml
 ```
 
-*Note: If you already have these sections in your `configuration.yaml`, you may need to merge the contents instead of using `!include`.*
+*Note: If you already have these sections in your `configuration.yaml`, you may need to merge the contents instead of using `!include`. For advanced users with multiple files in a directory, you can use:*
+
+```yaml
+template: !include_dir_merge_list templates/
+```
 
 ### 4. Restart Home Assistant
 

@@ -1,29 +1,35 @@
-grizzle_charge_enable:
-  url: "http://<ipaddress>/pageEvent"
+# Grizzl-E REST Commands
+# These commands allow for local control of the Grizzl-E Ultimate charger.
+
+# Toggle charging status (Enabled/Disabled)
+grizzl_e_charge_enable:
+  url: "http://!secret grizzl_e_ip/pageEvent"
   method: post
   content_type: "application/x-www-form-urlencoded"
-  payload: "evseEnabled=0"
+  payload: "evseEnabled=0" # 0 means enabled in the Grizzl-E API
 
-grizzle_charge_disable:
-  url: "http://<ipaddress>/pageEvent"
+grizzl_e_charge_disable:
+  url: "http://!secret grizzl_e_ip/pageEvent"
   method: post
   content_type: "application/x-www-form-urlencoded"
-  payload: "evseEnabled=1"
+  payload: "evseEnabled=1" # 1 means disabled in the Grizzl-E API
 
-grizzle_ocpp_enable:
-  url: "http://<ipaddress>/ocppEvent"
+# Toggle OCPP integration (Enabled/Disabled)
+grizzl_e_ocpp_enable:
+  url: "http://!secret grizzl_e_ip/ocppEvent"
   method: post
   content_type: "application/x-www-form-urlencoded"
   payload: "ocppEnabled=1"
 
-grizzle_ocpp_disable:
-  url: "http://<ipaddress>/ocppEvent"
+grizzl_e_ocpp_disable:
+  url: "http://!secret grizzl_e_ip/ocppEvent"
   method: post
   content_type: "application/x-www-form-urlencoded"
   payload: "ocppEnabled=0"
 
-grizzle_charge_rate:
-  url: "http://<ipaddress>/pageEvent"
+# Set the maximum charging current
+grizzl_e_set_charge_rate:
+  url: "http://!secret grizzl_e_ip/pageEvent"
   method: post
   content_type: "application/x-www-form-urlencoded"
   payload: "currentSet={{current}}"

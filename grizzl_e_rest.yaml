@@ -3,7 +3,7 @@
 - resource: !secret grizzl_e_main_resource
   method: POST
   scan_interval: 10
-  # authentication: basic # Uncomment these lines if you have enabled a password on your charger
+  # authentication: basic
   # username: !secret grizzl_e_username
   # password: !secret grizzl_e_password
   sensor:

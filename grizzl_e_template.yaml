@@ -28,7 +28,6 @@
       icon: mdi:ampersand
       # Read the current setting and match it to one of our options
       state: "{{ states('sensor.grizzl_e_current_set') }}"
-      # In the template integration, options must be a template string resolving to a list
       options: "{{ ['6', '12', '16', '24', '32', '40', '48'] }}"
       # When a new option is selected, call the rest_command
       select_option:

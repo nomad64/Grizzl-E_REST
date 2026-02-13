@@ -7,12 +7,18 @@ grizzl_e_charge_enable:
   url: !secret grizzl_e_page_event_url # grizzl_e_page_event_url: http://<ipaddress>/pageEvent
   method: post
   content_type: "application/x-www-form-urlencoded"
+  # authentication: basic # Uncomment these lines if you have enabled a password on your charger
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   payload: "evseEnabled=0" # 0 means enabled in the Grizzl-E API
 
 grizzl_e_charge_disable:
   url: !secret grizzl_e_page_event_url
   method: post
   content_type: "application/x-www-form-urlencoded"
+  # authentication: basic
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   payload: "evseEnabled=1" # 1 means disabled in the Grizzl-E API
 
 # Toggle OCPP integration (Enabled/Disabled)
@@ -20,12 +26,18 @@ grizzl_e_ocpp_enable:
   url: !secret grizzl_e_ocpp_event_url # grizzl_e_ocpp_event_url: http://<ipaddress>/ocppEvent
   method: post
   content_type: "application/x-www-form-urlencoded"
+  # authentication: basic
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   payload: "ocppEnabled=1"
 
 grizzl_e_ocpp_disable:
   url: !secret grizzl_e_ocpp_event_url
   method: post
   content_type: "application/x-www-form-urlencoded"
+  # authentication: basic
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   payload: "ocppEnabled=0"
 
 # Set the maximum charging current
@@ -33,4 +45,7 @@ grizzl_e_set_charge_rate:
   url: !secret grizzl_e_page_event_url
   method: post
   content_type: "application/x-www-form-urlencoded"
+  # authentication: basic
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   payload: "currentSet={{current}}"

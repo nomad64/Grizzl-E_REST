@@ -1,8 +1,11 @@
 # Grizzl-E Local Status Data
 # This configuration polls the Grizzl-E Ultimate charger's local API for state information and metrics.
-- resource: !secret grizzl_e_main_resource # Define this in secrets.yaml as: grizzl_e_main_resource: http://<ipaddress>/main
+- resource: !secret grizzl_e_main_resource
   method: POST
-  scan_interval: 10 # Adjusted to 10 seconds to avoid overwhelming the local API
+  scan_interval: 10
+  # authentication: basic # Uncomment these lines if you have enabled a password on your charger
+  # username: !secret grizzl_e_username
+  # password: !secret grizzl_e_password
   sensor:
     - name: grizzl_e_fw_main
       value_template: "{{ value_json.verFWMain }}"

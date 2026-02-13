@@ -33,6 +33,10 @@ Add your charger's API endpoints to your Home Assistant `secrets.yaml` file. Sin
 grizzl_e_main_resource: http://192.168.1.XXX/main
 grizzl_e_page_event_url: http://192.168.1.XXX/pageEvent
 grizzl_e_ocpp_event_url: http://192.168.1.XXX/ocppEvent
+
+# Optional: If you have enabled a password on your charger
+grizzl_e_username: admin
+grizzl_e_password: your_charger_password
 ```
 
 ### 3. Include Configuration Files

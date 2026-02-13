@@ -20,7 +20,7 @@ Home Assistant REST Integration for Grizzl-E Ultimate 48A charger. Since they ha
 
 ## Technical Requirements
 - **Home Assistant Integrations:** Requires the use of standard Home Assistant REST and Template integrations.
-- **Interactive Control:** Utilizes `input_number` helpers and automations to bridge the gap between UI inputs and REST commands.
+- **Interactive Control:** Utilizes Template entities (Switch, Select) to provide a seamless UI experience and direct control over charger settings.
 
 ## Documentation Strategy
 - **Setup Guide:** Maintain a detailed README with clear, step-by-step instructions for installation and configuration.

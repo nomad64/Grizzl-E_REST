@@ -1,19 +1,7 @@
 # Grizzl-E Example Automations
 # These examples demonstrate how to use the Grizzl-E integration for common tasks.
 
-# 1. Synchronize Charge Rate with Input Helper
-# This automation updates the charger's current limit whenever the input_number helper changes.
-- alias: "Grizzl-E: Sync Charge Current"
-  description: "Update charger current limit when input_number changes"
-  triggers:
-    - platform: state
-      entity_id: input_number.grizzl_e_charge_current
-  actions:
-    - action: rest_command.grizzl_e_set_charge_rate
-      data:
-        current: "{{ states('input_number.grizzl_e_charge_current') | int }}"
-
-# 2. Notification on Charging State Change
+# 1. Notification on Charging State Change
 # This automation sends a notification to your mobile device when the charging status changes.
 - alias: "Grizzl-E: Charging State Notification"
   description: "Notify when charging starts or stops"
@@ -28,7 +16,7 @@
           Charging has {{ 'started' if is_state('binary_sensor.grizzl_e_session_started', 'on') else 'stopped' }}.
           Current state: {{ states('sensor.grizzl_e_state') }}
 
-# 3. Automatic Charging based on Time of Use
+# 2. Automatic Charging based on Time of Use
 # This automation enables charging during off-peak hours (e.g., midnight to 6 AM).
 - alias: "Grizzl-E: Off-Peak Charging"
   description: "Enable charging during off-peak hours"

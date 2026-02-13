@@ -20,3 +20,20 @@
         - action: rest_command.grizzl_e_charge_enable
       turn_off:
         - action: rest_command.grizzl_e_charge_disable
+
+- number:
+    # Number entity to set the charging current
+    - name: grizzl_e_charge_current
+      unique_id: grizzl_e_charge_current
+      # Read the current setting from the charger sensor
+      state: "{{ states('sensor.grizzl_e_current_set') | int(0) }}"
+      min: 6
+      max: 48
+      step: 1
+      unit_of_measurement: "A"
+      icon: mdi:ampersand
+      # When changed in the UI, call the rest_command
+      set_value:
+        - action: rest_command.grizzl_e_set_charge_rate
+          data:
+            current: "{{ value | int }}"

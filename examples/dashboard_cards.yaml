@@ -8,10 +8,10 @@ title: Grizzl-E Charger
 entities:
   - entity: switch.grizzl_e_charge
     name: Charging Enable
+  - entity: number.grizzl_e_charge_current
+    name: Set Charge Rate
   - entity: sensor.grizzl_e_state
     name: Status
-  - entity: sensor.grizzl_e_current_set
-    name: Target Current
   - entity: sensor.grizzl_e_total_energy
     name: Total Energy Delivered
   - entity: binary_sensor.grizzl_e_session_started
@@ -29,16 +29,7 @@ entities:
   - entity: sensor.grizzl_e_power_meas
     name: Power
 
-# 3. Charging Current Control (Entities Card with Input Helper)
-# This card assumes you have created an input_number.grizzl_e_charge_current helper.
-type: entities
-title: Charge Rate Control
-entities:
-  - entity: input_number.grizzl_e_charge_current
-    name: Set Max Amps
-    icon: mdi:ampersand
-
-# 4. Charger Health (Entities Card)
+# 3. Charger Health (Entities Card)
 # Monitoring internal parameters and connectivity.
 type: entities
 title: Charger Diagnostics

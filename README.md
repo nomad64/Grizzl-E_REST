@@ -63,22 +63,20 @@ Restart Home Assistant or reload the REST, REST Command, and Template configurat
 
 ### Setting Charging Current
 
-To set the charging current from the UI, it is recommended to create an `input_number` helper and an automation:
+This integration provides a `number.grizzl_e_charge_current` entity that allows you to both view and set the charging current directly from the UI. This entity is automatically synchronized with the charger's state.
 
-1.  Create an `input_number.grizzl_e_charge_current` with a range (e.g., 6 to 48).
-2.  Create an automation that calls the `rest_command.grizzl_e_set_charge_rate` action whenever the `input_number` changes:
+1.  Add the `number.grizzl_e_charge_current` entity to your dashboard.
+2.  Adjust the slider (6A to 48A) to update the charger's limit.
+
+For advanced automation scenarios (e.g., matching solar production), you can call the `number.set_value` action:
 
 ```yaml
-automation:
-  - alias: "Grizzl-E Set Charge Current"
-    description: "Update the charger's maximum current limit whenever the input_number helper is adjusted in the UI."
-    triggers:
-      - platform: state
-        entity_id: input_number.grizzl_e_charge_current
-    actions:
-      - action: rest_command.grizzl_e_set_charge_rate
-        data:
-          current: "{{ states('input_number.grizzl_e_charge_current') | int }}"
+actions:
+  - action: number.set_value
+    target:
+      entity_id: number.grizzl_e_charge_current
+    data:
+      value: 32
 ```
 
 ## Documentation

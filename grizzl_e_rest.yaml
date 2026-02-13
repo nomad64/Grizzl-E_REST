@@ -355,7 +355,7 @@
 
     - name: grizzl_e_temperature2
       value_template: "{{ value_json.temperature2 }}"
-      unique_id: grizzl_e_temperature1
+      unique_id: grizzl_e_temperature2
 
     - name: grizzl_e_leak_value
       value_template: "{{ value_json.leakValue }}"
